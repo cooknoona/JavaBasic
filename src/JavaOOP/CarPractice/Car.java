@@ -51,8 +51,10 @@ abstract class Car {
             System.out.println("올바르지 않은 입력입니다.");
             weather = sc.nextInt();
         }
-        if (weather == 2) return 1.2;
-        if (weather == 3) return 1.4;
+        if (weather == 2)
+            return 1.2;
+        if (weather == 3)
+            return 1.4;
         return 1.0;
     }
 
@@ -63,7 +65,7 @@ abstract class Car {
         int totalPrice = requiredFuel * GAS_PRICE;
 
 
-        double time = distance / speed * weatherOpt;
+        double time = (distance / speed) * weatherOpt;
         int hours = (int) time;
         int minutes = (int) ((time - hours) * 60);
 
