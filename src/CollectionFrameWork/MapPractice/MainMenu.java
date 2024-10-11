@@ -87,10 +87,11 @@ public class MainMenu {
                         System.out.print("수정 할 제품의 설명을 입력 하세요 : ");
                         String editDescription = sc.next();
                         sc.nextLine();
-                        // 기존 메뉴(키) 삭제 후, 수정된 이름(키)로 새로 추가
-                        MenuInfo updatedMenu = new MenuInfo(editName, editPrice, editCategory, editDescription);
-                        map.remove(editMenu);  // 기존 이름으로 된 키 삭제
-                        map.put(editName, updatedMenu);  // 새로운 이름으로 항목 추가
+                        map.remove(editMenu);
+
+                        // 키값을 바꾸기 위해선 삭제후에 재생성 해야함
+                        map.put(editMenu, new MenuInfo(editName, editPrice, editCategory, editDescription));
+
                         System.out.println("메뉴가 성공적으로 수정되었습니다.");
                     } else {
                         System.out.println("다시 시도해 주세요.");
